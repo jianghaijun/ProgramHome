@@ -30,3 +30,27 @@
 
 -dontwarn cn.smssdk.**
 -keep class cn.smssdk.**{*;}
+
+# xUtils
+-keepattributes Signature,*Annotation*
+-keep public class org.xutils.** {
+    public protected *;
+}
+-keep public interface org.xutils.** {
+    public protected *;
+}
+-keepclassmembers class * extends org.xutils.** {
+    public protected *;
+}
+-keepclassmembers @org.xutils.db.annotation.* class * {*;}
+-keepclassmembers @org.xutils.http.annotation.* class * {*;}
+-keepclassmembers class * {
+    @org.xutils.view.annotation.Event <methods>;
+}
+
+# okhttp3
+-dontwarn okhttp3.**
+-dontwarn okio.**
+-dontwarn javax.annotation.**
+# A resource is loaded with a relative path so the package of this class must be preserved.
+-keepnames class okhttp3.internal.publicsuffix.PublicSuffixDatabase

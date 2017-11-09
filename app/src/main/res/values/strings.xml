@@ -1,3 +1,4 @@
 <resources>
-    <string name="app_name">ProgramHome</string>
+    <string name="app_name">程序之家</string>
+    <string name="experience_now">立即体验</string>
 </resources>
