@@ -1,10 +1,12 @@
-package pers.haijun.programhome.base;
+package pers.haijun.programhome.activity;
 
-import android.os.Bundle;
-import android.support.annotation.Nullable;
+import android.content.Intent;
+import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
-import android.view.MotionEvent;
-import android.view.inputmethod.InputMethodManager;
+import android.os.Bundle;
+
+import pers.haijun.programhome.R;
+import pers.haijun.programhome.base.BaseActivity;
 
 /**
  *                     _ooOoo_
@@ -27,24 +29,29 @@ import android.view.inputmethod.InputMethodManager;
  *                     `=---='
  * ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
  *              佛祖保佑       永无BUG
- * Created by HaiJun on 2017/11/12 0012 17:36
+ * Created by HaiJun on 2017/11/12 0012 17:23
+ * 启动页
  */
+public class StartupPageActivity extends BaseActivity {
 
-public class BaseActivity extends AppCompatActivity{
     @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_startup_page);
+
+        new Handler().postAtTime(new Runnable() {
+            @Override
+            public void run() {
+                startNextPage();
+            }
+        }, 2000);
     }
 
-    @Override
-    public boolean onTouchEvent(MotionEvent event) {
-        if(null != this.getCurrentFocus()){
-            /**
-             * 点击空白位置 隐藏软键盘
-             */
-            InputMethodManager mInputMethodManager = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
-            return mInputMethodManager.hideSoftInputFromWindow(this.getCurrentFocus().getWindowToken(), 0);
-        }
-        return super.onTouchEvent(event);
+    /**
+     * 启动下一页
+     */
+    private void startNextPage() {
+        startActivity(new Intent(this, MainActivity.class));
+        this.finish();
     }
 }

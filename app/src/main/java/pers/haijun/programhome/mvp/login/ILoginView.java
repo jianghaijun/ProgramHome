@@ -1,6 +1,8 @@
-package pers.haijun.programhome.utils;
+package pers.haijun.programhome.mvp.login;
 
-import okhttp3.MediaType;
+import android.content.Context;
+
+import pers.haijun.programhome.base.IBaseView;
 
 /**
  *                     _ooOoo_
@@ -22,21 +24,14 @@ import okhttp3.MediaType;
  * ======`-.____`-.___\_____/___.-`____.-'======
  *                     `=---='
  * ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
- * 			   佛祖保佑       永无BUG
- *       Created by HaiJun on 2017/11/3 9:31
+ *              佛祖保佑       永无BUG
+ * Created by HaiJun on 2017/11/12 0012 18:58
  */
 
-public class ConstantUtil {
-    /*基础路径*/
-    public static final String BASE_URL = "http://192.168.1.101:8080";
-
-    /*请求参数格式*/
-    public static final MediaType JSON = MediaType.parse("application/json; charset=utf-8");
-    /*请求超时时间*/
-    public static final int CONNECT_TIME_OUT = 20000;
-    /*是否已启动*/
-    public static String isStart = "IsStart";
-
-    /*登录*/
-    public static final String SIGN_IN = "/ProgramHome/user/login";
+public interface ILoginView extends IBaseView{
+    String getPhoneNum();
+    String getPassWord();
+    Context getContext();
+    void loginSuccessful();
+    void loginError(String errMsg);
 }

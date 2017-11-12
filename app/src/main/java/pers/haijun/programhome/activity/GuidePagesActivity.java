@@ -22,7 +22,9 @@ import java.util.List;
 
 import pers.haijun.programhome.R;
 import pers.haijun.programhome.base.BaseActivity;
+import pers.haijun.programhome.utils.ConstantUtil;
 import pers.haijun.programhome.utils.ScreenManagerUtil;
+import pers.haijun.programhome.utils.SpUtil;
 
 /**
  *                     _ooOoo_
@@ -68,15 +70,20 @@ public class GuidePagesActivity extends BaseActivity implements ViewPager.OnPage
         setContentView(R.layout.activity_guide_pages);
         x.view().inject(this);
 
-        mContext = this;
-        ScreenManagerUtil.pushActivity(this);
+        boolean isLogin = (boolean) SpUtil.get(this, ConstantUtil.isStart, false);
+        if (!isLogin) {
+            mContext = this;
 
-        initData();
+            initData();
 
-        guidePagesAdapter = new GuidePagesAdapter();
-        viewPageGuidePages.setAdapter(guidePagesAdapter);
-        viewPageGuidePages.setCurrentItem(0);
-        viewPageGuidePages.addOnPageChangeListener(this);
+            guidePagesAdapter = new GuidePagesAdapter();
+            viewPageGuidePages.setAdapter(guidePagesAdapter);
+            viewPageGuidePages.setCurrentItem(0);
+            viewPageGuidePages.addOnPageChangeListener(this);
+        } else {
+            startActivity(new Intent(this, StartupPageActivity.class));
+            this.finish();
+        }
     }
 
     /**
@@ -148,8 +155,8 @@ public class GuidePagesActivity extends BaseActivity implements ViewPager.OnPage
         @Override
         public Object instantiateItem(ViewGroup container, int position) {
             View view = LayoutInflater.from(mContext).inflate(R.layout.item_guide_pages, null);
-            ImageView imgGuidePage = view.findViewById(R.id.imgGuidePage);
-            Button btnExperienceNow = view.findViewById(R.id.btnExperienceNow);
+            ImageView imgGuidePage = (ImageView) view.findViewById(R.id.imgGuidePage);
+            Button btnExperienceNow = (Button) view.findViewById(R.id.btnExperienceNow);
 
             if (position == imgUrlList.size() -1) {
                 btnExperienceNow.setVisibility(View.VISIBLE);
@@ -160,7 +167,8 @@ public class GuidePagesActivity extends BaseActivity implements ViewPager.OnPage
             btnExperienceNow.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    mContext.startActivity(new Intent(mContext, MainActivity.class));
+                    mContext.startActivity(new Intent(mContext, LoginActivity.class));
+                    GuidePagesActivity.this.finish();
                 }
             });
 
@@ -200,9 +208,4 @@ public class GuidePagesActivity extends BaseActivity implements ViewPager.OnPage
 
     }
 
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        ScreenManagerUtil.popActivity(this);
-    }
 }

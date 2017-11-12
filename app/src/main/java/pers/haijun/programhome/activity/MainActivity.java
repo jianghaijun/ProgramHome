@@ -47,7 +47,7 @@ import pers.haijun.programhome.utils.ConstantUtil;
  * ======`-.____`-.___\_____/___.-`____.-'======
  *                     `=---='
  * ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
- * 			   佛祖保佑       永无BUG
+ *              佛祖保佑       永无BUG
  *       Created by HaiJun on 2017/11/2 9:01
  */
 public class MainActivity extends AppCompatActivity {
