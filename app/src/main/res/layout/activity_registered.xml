@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.android.percent.support.PercentLinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/uiBgColor"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:orientation="vertical"
+    tools:context=".activity.RegisteredActivity">
+
+    <include
+        android:id="@+id/incActionBar"
+        layout="@layout/layout_status_bar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/zero_dp"
+        android:layout_alignParentTop="true"
+        app:layout_heightPercent="10%"/>
+
+    <EditText
+        android:id="@+id/edtUserPhone"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/fifty_dp"
+        android:layout_marginLeft="@dimen/thirty_dp"
+        android:layout_marginRight="@dimen/thirty_dp"
+        android:layout_marginTop="@dimen/fifty_dp"
+        android:background="@drawable/bg"
+        android:drawableLeft="@drawable/msg_code"
+        android:drawablePadding="@dimen/ten_dp"
+        android:gravity="left|center"
+        android:hint="@string/user_phone"
+        android:inputType="phone"
+        android:paddingLeft="@dimen/ten_dp"
+        android:textColor="@color/darkGrey"
+        android:textSize="@dimen/fourteen_sp"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/fifty_dp"
+        android:layout_marginLeft="@dimen/thirty_dp"
+        android:layout_marginRight="@dimen/thirty_dp"
+        android:layout_marginTop="@dimen/twenty_dp">
+
+        <EditText
+            android:id="@+id/edtMsgCode"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginRight="@dimen/ten_dp"
+            android:layout_toLeftOf="@+id/btnSendMsg"
+            android:background="@drawable/bg"
+            android:drawableLeft="@drawable/msg_code"
+            android:drawablePadding="@dimen/ten_dp"
+            android:gravity="left|center"
+            android:hint="@string/verification_code"
+            android:inputType="number"
+            android:paddingLeft="@dimen/ten_dp"
+            android:textColor="@color/darkGrey"
+            android:textSize="@dimen/fourteen_sp"/>
+
+        <Button
+            android:id="@+id/btnSendMsg"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/btn_blue"
+            android:text="@string/send_msg"
+            android:textColor="@color/white"
+            android:textSize="@dimen/fourteen_sp"/>
+    </RelativeLayout>
+
+    <EditText
+        android:id="@+id/edtPassword"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/fifty_dp"
+        android:layout_marginLeft="@dimen/thirty_dp"
+        android:layout_marginRight="@dimen/thirty_dp"
+        android:layout_marginTop="@dimen/twenty_dp"
+        android:background="@drawable/bg"
+        android:drawableLeft="@drawable/password"
+        android:drawablePadding="@dimen/ten_dp"
+        android:gravity="left|center"
+        android:hint="@string/password"
+        android:inputType="textPassword"
+        android:paddingLeft="@dimen/ten_dp"
+        android:textColor="@color/darkGrey"
+        android:textSize="@dimen/fourteen_sp"/>
+
+    <EditText
+        android:id="@+id/edtQueryPassword"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/fifty_dp"
+        android:layout_marginLeft="@dimen/thirty_dp"
+        android:layout_marginRight="@dimen/thirty_dp"
+        android:layout_marginTop="@dimen/twenty_dp"
+        android:background="@drawable/bg"
+        android:drawableLeft="@drawable/password"
+        android:drawablePadding="@dimen/ten_dp"
+        android:gravity="left|center"
+        android:hint="@string/query_password"
+        android:inputType="textPassword"
+        android:paddingLeft="@dimen/ten_dp"
+        android:textColor="@color/darkGrey"
+        android:textSize="@dimen/fourteen_sp"/>
+
+
+    <Button
+        android:id="@+id/btnSubmit"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/fifty_dp"
+        android:layout_marginLeft="@dimen/thirty_dp"
+        android:layout_marginRight="@dimen/thirty_dp"
+        android:layout_marginTop="@dimen/twenty_dp"
+        android:background="@drawable/btn_blue"
+        android:gravity="center"
+        android:text="@string/register"
+        android:textColor="@color/white"
+        android:textSize="@dimen/fourteen_sp"/>
+</com.zhy.android.percent.support.PercentLinearLayout>
