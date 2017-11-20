@@ -14,7 +14,9 @@ import pers.haijun.programhome.R;
 import pers.haijun.programhome.base.BaseActivity;
 import pers.haijun.programhome.mvp.login.ILoginView;
 import pers.haijun.programhome.mvp.login.LoginPresenter;
+import pers.haijun.programhome.utils.ConstantUtil;
 import pers.haijun.programhome.utils.LoadingUtils;
+import pers.haijun.programhome.utils.SpUtil;
 import pers.haijun.programhome.utils.ToastUtil;
 
 /**
@@ -86,22 +88,29 @@ public class LoginActivity extends BaseActivity implements ILoginView{
     }
 
     @Override
-    public void loginSuccessful() {
+    public void requestSuccessful() {
+        SpUtil.put(this, ConstantUtil.isStart, true);
         startActivity(new Intent(mContext, MainActivity.class));
     }
 
     @Override
-    public void loginError(String errMsg) {
+    public void requestError(String errMsg) {
         ToastUtil.showShort(mContext, errMsg);
     }
 
-    @Event({R.id.btnSignIn, R.id.btnRegister})
+    @Event({R.id.btnSignIn, R.id.btnRegister, R.id.txtForgotPassword})
     private void onClick(View v) {
         switch (v.getId()) {
+            // 登录
             case R.id.btnSignIn:
                 loginPresenter.login();
                 break;
+            // 注册
             case R.id.btnRegister:
+                startActivity(new Intent(mContext, RegisteredActivity.class));
+                break;
+            // 忘记密码
+            case R.id.txtForgotPassword:
                 break;
         }
     }

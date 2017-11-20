@@ -31,7 +31,4 @@ import pers.haijun.programhome.base.IBaseView;
 public interface ILoginView extends IBaseView{
     String getPhoneNum();
     String getPassWord();
-    Context getContext();
-    void loginSuccessful();
-    void loginError(String errMsg);
 }

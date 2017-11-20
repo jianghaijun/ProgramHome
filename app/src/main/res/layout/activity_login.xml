@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorAccent"
+    android:background="@drawable/login_bg"
     android:focusable="true"
     android:focusableInTouchMode="true"
     android:orientation="vertical"
@@ -22,7 +22,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="@dimen/one_hundred_dp"
-        android:layout_marginTop="@dimen/thirty"
+        android:layout_marginTop="@dimen/thirty_dp"
         android:background="@drawable/login_edit"
         android:orientation="vertical"
         app:layout_marginLeftPercent="10%"
@@ -65,7 +65,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="@dimen/fifty_dp"
-        android:layout_marginTop="@dimen/thirty"
+        android:layout_marginTop="@dimen/thirty_dp"
         android:orientation="horizontal"
         app:layout_marginLeftPercent="10%"
         app:layout_marginRightPercent="10%">

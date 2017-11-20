@@ -44,9 +44,9 @@ public class LoginPresenter {
             @Override
             public void promptMessage(String msg) {
                 if (msg.contains("成功")) {
-                    loginView.loginSuccessful();
+                    loginView.requestSuccessful();
                 } else {
-                    loginView.loginError(msg);
+                    loginView.requestError(msg);
                 }
                 loginView.hideLoading();
             }
