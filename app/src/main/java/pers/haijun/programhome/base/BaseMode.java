@@ -1,6 +1,6 @@
-package pers.haijun.programhome.utils;
+package pers.haijun.programhome.base;
 
-import okhttp3.MediaType;
+import android.text.TextUtils;
 
 /**
  *                     _ooOoo_
@@ -22,23 +22,27 @@ import okhttp3.MediaType;
  * ======`-.____`-.___\_____/___.-`____.-'======
  *                     `=---='
  * ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
- * 			   佛祖保佑       永无BUG
- *       Created by HaiJun on 2017/11/3 9:31
+ *              佛祖保佑       永无BUG
+ * Created by HaiJun on 2017/11/14 0014 22:08
  */
 
-public class ConstantUtil {
-    /*基础路径*/
-    public static final String BASE_URL = "http://45.77.107.130:8080";
+public class BaseMode {
+    private String code;
+    private String message;
 
-    /*请求参数格式*/
-    public static final MediaType JSON = MediaType.parse("application/json; charset=utf-8");
-    /*请求超时时间*/
-    public static final int CONNECT_TIME_OUT = 20000;
-    /*是否已启动*/
-    public static String isStart = "IsStart";
+    public String getCode() {
+        return TextUtils.isEmpty(code) ? "" : code;
+    }
 
-    /*登录*/
-    public static final String SIGN_IN = "/ProgramHome/user/login";
-    /*注册*/
-    public static final String REGISTERED = "/ProgramHome/user/registeredUser";
+    public void setCode(String code) {
+        this.code = code;
+    }
+
+    public String getMessage() {
+        return TextUtils.isEmpty(message) ? "" : message;
+    }
+
+    public void setMessage(String message) {
+        this.message = message;
+    }
 }

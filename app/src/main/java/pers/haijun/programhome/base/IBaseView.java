@@ -1,5 +1,7 @@
 package pers.haijun.programhome.base;
 
+import android.content.Context;
+
 /**
  *                     _ooOoo_
  *                    o8888888o
@@ -27,4 +29,7 @@ package pers.haijun.programhome.base;
 public interface IBaseView {
     void showLoading();
     void hideLoading();
+    Context getContext();
+    void requestSuccessful();
+    void requestError(String errMsg);
 }
