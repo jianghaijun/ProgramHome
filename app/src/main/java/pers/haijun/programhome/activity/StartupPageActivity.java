@@ -33,18 +33,28 @@ import pers.haijun.programhome.base.BaseActivity;
  * 启动页
  */
 public class StartupPageActivity extends BaseActivity {
+    private Handler handler = new Handler();
+    private int count = 3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_startup_page);
 
-        new Handler().postAtTime(new Runnable() {
+        Runnable runnable = new Runnable() {
             @Override
             public void run() {
-                startNextPage();
+                count--;
+                if (count == 0) {
+                    handler.removeCallbacks(this);
+                    startNextPage();
+                } else {
+                    handler.postDelayed(this, 1000);
+                }
             }
-        }, 2000);
+        };
+
+        handler.postDelayed(runnable, 1000);
     }
 
     /**
