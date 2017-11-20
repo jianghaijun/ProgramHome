@@ -91,9 +91,9 @@ public class GuidePagesActivity extends BaseActivity implements ViewPager.OnPage
      */
     private void initData() {
         imgUrlList = new ArrayList<>();
-        imgUrlList.add(R.mipmap.guide_page_1);
-        imgUrlList.add(R.mipmap.guide_page_1);
-        imgUrlList.add(R.mipmap.guide_page_1);
+        imgUrlList.add(R.drawable.guide_page_one);
+        imgUrlList.add(R.drawable.guide_page_two);
+        imgUrlList.add(R.drawable.guide_page_three);
 
         addIndicator(imgUrlList);
     }

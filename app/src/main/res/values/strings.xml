@@ -3,12 +3,21 @@
     <string name="experience_now">立即体验</string>
     <string name="user_phone">手机号</string>
     <string name="password">密码</string>
+    <string name="query_password">确认密码</string>
     <string name="sign_in">登录</string>
     <string name="register">注册</string>
+    <string name="register_successful">注册成功！</string>
     <string name="forgot_password">忘记密码？</string>
     <string name="phone_num_can_not_empty">手机号不能为空！</string>
     <string name="phone_num_error">请输入正确的手机号！</string>
     <string name="password_can_not_empty">密码不能为空！</string>
+    <string name="password_inconsistency">两次输入密码不一致！</string>
     <string name="server_error">服务器异常！</string>
     <string name="json_error">返回数据有误！</string>
+    <string name="verification_code">验证码</string>
+    <string name="verification_code_can_not_empty">验证码不能为空！</string>
+    <string name="verification_code_error">验证码错误！</string>
+    <string name="send_msg">发送短信</string>
+    <string name="send_msg_successful">短信发送成功！</string>
+
 </resources>

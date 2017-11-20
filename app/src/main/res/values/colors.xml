@@ -4,5 +4,15 @@
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
 
+    <!--布局背景色-->
+    <color name="uiBgColor">#F7F7F7</color>
+    标题栏背景色-未点击
+    <color name="actionBarColor">#197FEE</color>
+    标题栏背景色-点击
+    <color name="actionBarCheckColor">#1877df</color>
+
+
     <color name="white">#FFFFFF</color>
+    <color name="gray">#D9D9D9</color>
+    <color name="darkGrey">#7F7F7F</color>
 </resources>
